@@ -342,7 +342,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MinimumSize = new System.Drawing.Size(997, 580);
             this.Name = "MainForm";
-            this.Text = "Gamer Radar";
+            this.Text = "Games Radar";
             ((System.ComponentModel.ISupportInitialize)(this.MaxPriceNumericUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.MinPriceNumericUpDown)).EndInit();
             this.splitContainer1.Panel1.ResumeLayout(false);
