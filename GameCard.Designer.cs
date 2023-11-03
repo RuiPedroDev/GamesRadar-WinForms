@@ -1,6 +1,6 @@
 ﻿namespace GameApi
 {
-    partial class UserControl1
+    partial class GameCard
     {
         /// <summary> 
         /// Variável de designer necessária.

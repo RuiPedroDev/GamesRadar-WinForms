@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace GameApi
 {
-    public partial class UserControl1 : UserControl
+    public partial class GameCard : UserControl
     {
-        public UserControl1(string title, string ImageUrl, string Savings, string NormalPrice, string SalePrice, string StoreID, string DealRating, string GameLink)
+        public GameCard(string title, string ImageUrl, string Savings, string NormalPrice, string SalePrice, string StoreID, string DealRating, string GameLink)
         {
             InitializeComponent();
             pictureBox1.ImageLocation = ImageUrl;

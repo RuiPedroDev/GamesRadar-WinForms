@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace GameApi
 {
-    public partial class Form2 : Form
+    public partial class StoresForm : Form
     {
-        public Form2()
+        public StoresForm()
         {
             InitializeComponent();
         }

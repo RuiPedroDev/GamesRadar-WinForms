@@ -14,18 +14,15 @@ using System.Diagnostics;
 
 namespace GameApi
 {
-    public partial class Form1 : Form
+    public partial class MainForm : Form
     {
-        public Form1()
+        public MainForm()
         {
             InitializeComponent();
 
 
             comboBox1.SelectedItem = comboBox1.Items[0];
             MakeRequest();
-
-            //code bellow calls comboBox1_SelectedIndexChanged which makes the request
-            //comboBox1.SelectedItem = comboBox1.Items[0];
         }
 
 
@@ -34,7 +31,7 @@ namespace GameApi
         int PageNumber = 0;
 
 
-        private void button1_Click(object sender, EventArgs e)
+        private void refreshButton_Click(object sender, EventArgs e)
         {
             PageNumber = 0;
             MakeRequest();
@@ -62,7 +59,7 @@ namespace GameApi
         {
             foreach (APIResponseModel.root GamePanel in ResponseObj)
             {
-                UserControl1 Game = new UserControl1(GamePanel.title,
+                GameCard Game = new GameCard(GamePanel.title,
                                                      GamePanel.thumb,
                                                      GamePanel.savings,
                                                      GamePanel.normalPrice,
@@ -105,9 +102,9 @@ namespace GameApi
             }
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void storeFilterButton_Click(object sender, EventArgs e)
         {
-            Form2 FilterForm = new Form2();
+            StoresForm FilterForm = new StoresForm();
             StoreFilter = "";
             FilterForm.ShowDialog();
             foreach (CheckBox box in FilterForm.Controls.OfType<CheckBox>())
@@ -125,7 +122,7 @@ namespace GameApi
             MakeRequest();
         }
 
-        private void button4_Click(object sender, EventArgs e)
+        private void nextPageButton_Click(object sender, EventArgs e)
         {
             if (flowLayoutPanel1.Controls.Count != 0)
             {
@@ -134,7 +131,7 @@ namespace GameApi
             }
         }
 
-        private void button3_Click(object sender, EventArgs e)
+        private void prevPageButton_Click(object sender, EventArgs e)
         {
             if (PageNumber >= 1)
             {

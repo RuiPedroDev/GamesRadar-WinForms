@@ -1,6 +1,6 @@
 ﻿namespace GameApi
 {
-    partial class Form1
+    partial class MainForm
     {
         /// <summary>
         /// Variável de designer necessária.
@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
-            this.button1 = new System.Windows.Forms.Button();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
+            this.refreshButton = new System.Windows.Forms.Button();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.MaxPriceNumericUpDown = new System.Windows.Forms.NumericUpDown();
             this.label1 = new System.Windows.Forms.Label();
@@ -42,9 +42,9 @@
             this.radioButton1 = new System.Windows.Forms.RadioButton();
             this.label4 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
+            this.storeFilterButton = new System.Windows.Forms.Button();
+            this.prevButtonPage = new System.Windows.Forms.Button();
+            this.nextPageButton = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.MaxPriceNumericUpDown)).BeginInit();
@@ -55,21 +55,21 @@
             this.splitContainer1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // button1
+            // refreshButton
             // 
-            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            this.refreshButton.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.button1.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Segoe UI Semibold", 12.25F, System.Drawing.FontStyle.Bold);
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(861, 490);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(108, 34);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Refresh";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.refreshButton.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.refreshButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.refreshButton.Font = new System.Drawing.Font("Segoe UI Semibold", 12.25F, System.Drawing.FontStyle.Bold);
+            this.refreshButton.ForeColor = System.Drawing.Color.White;
+            this.refreshButton.Location = new System.Drawing.Point(861, 490);
+            this.refreshButton.Name = "refreshButton";
+            this.refreshButton.Size = new System.Drawing.Size(108, 34);
+            this.refreshButton.TabIndex = 0;
+            this.refreshButton.Text = "Refresh";
+            this.refreshButton.UseVisualStyleBackColor = true;
+            this.refreshButton.Click += new System.EventHandler(this.refreshButton_Click);
             // 
             // flowLayoutPanel1
             // 
@@ -253,50 +253,50 @@
             this.textBox1.Size = new System.Drawing.Size(122, 29);
             this.textBox1.TabIndex = 8;
             // 
-            // button2
+            // storeFilterButton
             // 
-            this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.button2.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Segoe UI Semibold", 12.25F, System.Drawing.FontStyle.Bold);
-            this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(670, 490);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(131, 34);
-            this.button2.TabIndex = 9;
-            this.button2.Text = "Filter by store";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.storeFilterButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.storeFilterButton.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.storeFilterButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.storeFilterButton.Font = new System.Drawing.Font("Segoe UI Semibold", 12.25F, System.Drawing.FontStyle.Bold);
+            this.storeFilterButton.ForeColor = System.Drawing.Color.White;
+            this.storeFilterButton.Location = new System.Drawing.Point(670, 490);
+            this.storeFilterButton.Name = "storeFilterButton";
+            this.storeFilterButton.Size = new System.Drawing.Size(131, 34);
+            this.storeFilterButton.TabIndex = 9;
+            this.storeFilterButton.Text = "Filter by store";
+            this.storeFilterButton.UseVisualStyleBackColor = true;
+            this.storeFilterButton.Click += new System.EventHandler(this.storeFilterButton_Click);
             // 
-            // button3
+            // prevButtonPage
             // 
-            this.button3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.button3.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Font = new System.Drawing.Font("Segoe UI Semibold", 12.25F, System.Drawing.FontStyle.Bold);
-            this.button3.ForeColor = System.Drawing.Color.White;
-            this.button3.Location = new System.Drawing.Point(12, 490);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(140, 34);
-            this.button3.TabIndex = 9;
-            this.button3.Text = "Previous page";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.prevButtonPage.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.prevButtonPage.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.prevButtonPage.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.prevButtonPage.Font = new System.Drawing.Font("Segoe UI Semibold", 12.25F, System.Drawing.FontStyle.Bold);
+            this.prevButtonPage.ForeColor = System.Drawing.Color.White;
+            this.prevButtonPage.Location = new System.Drawing.Point(12, 490);
+            this.prevButtonPage.Name = "prevButtonPage";
+            this.prevButtonPage.Size = new System.Drawing.Size(140, 34);
+            this.prevButtonPage.TabIndex = 9;
+            this.prevButtonPage.Text = "Previous page";
+            this.prevButtonPage.UseVisualStyleBackColor = true;
+            this.prevButtonPage.Click += new System.EventHandler(this.prevPageButton_Click);
             // 
-            // button4
+            // nextPageButton
             // 
-            this.button4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.button4.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Font = new System.Drawing.Font("Segoe UI Semibold", 12.25F, System.Drawing.FontStyle.Bold);
-            this.button4.ForeColor = System.Drawing.Color.White;
-            this.button4.Location = new System.Drawing.Point(314, 490);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(140, 34);
-            this.button4.TabIndex = 10;
-            this.button4.Text = "Next page";
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
+            this.nextPageButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.nextPageButton.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.nextPageButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.nextPageButton.Font = new System.Drawing.Font("Segoe UI Semibold", 12.25F, System.Drawing.FontStyle.Bold);
+            this.nextPageButton.ForeColor = System.Drawing.Color.White;
+            this.nextPageButton.Location = new System.Drawing.Point(314, 490);
+            this.nextPageButton.Name = "nextPageButton";
+            this.nextPageButton.Size = new System.Drawing.Size(140, 34);
+            this.nextPageButton.TabIndex = 10;
+            this.nextPageButton.Text = "Next page";
+            this.nextPageButton.UseVisualStyleBackColor = true;
+            this.nextPageButton.Click += new System.EventHandler(this.nextPageButton_Click);
             // 
             // label5
             // 
@@ -320,28 +320,28 @@
             this.label6.ForeColor = System.Drawing.Color.White;
             this.label6.Location = new System.Drawing.Point(476, 497);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(152, 21);
+            this.label6.Size = new System.Drawing.Size(161, 21);
             this.label6.TabIndex = 11;
-            this.label6.Text = "Made by: Rui Pedro";
+            this.label6.Text = "Made by: Rui Borges";
             // 
-            // Form1
+            // MainForm
             // 
-            this.AcceptButton = this.button1;
+            this.AcceptButton = this.refreshButton;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(70)))), ((int)(((byte)(70)))));
             this.ClientSize = new System.Drawing.Size(981, 541);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.button3);
+            this.Controls.Add(this.storeFilterButton);
+            this.Controls.Add(this.nextPageButton);
+            this.Controls.Add(this.prevButtonPage);
             this.Controls.Add(this.splitContainer1);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.refreshButton);
             this.DoubleBuffered = true;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MinimumSize = new System.Drawing.Size(997, 580);
-            this.Name = "Form1";
+            this.Name = "MainForm";
             this.Text = "Gamer Radar";
             ((System.ComponentModel.ISupportInitialize)(this.MaxPriceNumericUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.MinPriceNumericUpDown)).EndInit();
@@ -357,7 +357,7 @@
 
         #endregion
 
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button refreshButton;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private System.Windows.Forms.NumericUpDown MaxPriceNumericUpDown;
         private System.Windows.Forms.Label label1;
@@ -368,9 +368,9 @@
         private System.Windows.Forms.SplitContainer splitContainer1;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button storeFilterButton;
+        private System.Windows.Forms.Button prevButtonPage;
+        private System.Windows.Forms.Button nextPageButton;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.RadioButton radioButton2;
