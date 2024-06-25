@@ -1,13 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using System.Net;
 using RestSharp;
 using Newtonsoft.Json;
 using System.Diagnostics;
@@ -38,10 +29,10 @@ namespace GameApi
         }
         public void MakeRequest()
         {
-            string Queries = $"sortBy={comboBox1.SelectedItem.ToString().Replace(" ", "%20")}&desc={(comboBox1.SelectedItem.ToString() == "Price" ? Convert.ToInt32(!radioButton1.Checked) : Convert.ToInt32(radioButton1.Checked))}&lowerPrice={MinPriceNumericUpDown.Value}&upperPrice={MaxPriceNumericUpDown.Value}&title={textBox1.Text.Replace("?", "").Replace("\\", "").Replace("&", "").Trim()}{(StoreFilter != "" ? $"&storeID={StoreFilter}" : "")}&pageNumber={PageNumber}";
+            string Queries = $"sortBy={comboBox1.SelectedItem!.ToString()!.Replace(" ", "%20")}&desc={(comboBox1.SelectedItem.ToString() == "Price" ? Convert.ToInt32(!radioButton1.Checked) : Convert.ToInt32(radioButton1.Checked))}&lowerPrice={MinPriceNumericUpDown.Value}&upperPrice={MaxPriceNumericUpDown.Value}&title={textBox1.Text.Replace("?", "").Replace("\\", "").Replace("&", "").Trim()}{(StoreFilter != "" ? $"&storeID={StoreFilter}" : "")}&pageNumber={PageNumber}";
             Debug.WriteLine(Url + Queries);
             List<APIResponseModel.root> ResponseObj = GetRequest<List<APIResponseModel.root>>(Url + Queries);
-            if (!(ResponseObj is null))
+            if (ResponseObj is not null)
             {
                 label5.Text = $"Page number: {PageNumber + 1}";
                 flowLayoutPanel1.Controls.Clear();
@@ -59,14 +50,14 @@ namespace GameApi
         {
             foreach (APIResponseModel.root GamePanel in ResponseObj)
             {
-                GameCard Game = new GameCard(GamePanel.title,
-                                                     GamePanel.thumb,
-                                                     GamePanel.savings,
-                                                     GamePanel.normalPrice,
-                                                     GamePanel.salePrice,
-                                                     GamePanel.storeID,
-                                                     GamePanel.dealRating,
-                                                     GamePanel.dealID);
+                GameCard Game = new GameCard(GamePanel.title!,
+                                                     GamePanel.thumb!,
+                                                     GamePanel.savings!,
+                                                     GamePanel.normalPrice!,
+                                                     GamePanel.salePrice!,
+                                                     GamePanel.storeID!,
+                                                     GamePanel.dealRating!,
+                                                     GamePanel.dealID!);
                 flowLayoutPanel1.Controls.Add(Game);
             }
         }
@@ -74,10 +65,10 @@ namespace GameApi
         {
             try
             {
-                RestClient Client = new RestClient();
-                RestRequest Request = new RestRequest(Url);
-                string JsonData = Client.Get(Request).Content;
-                T Response = JsonConvert.DeserializeObject<T>(JsonData);
+                RestClient Client = new();
+                RestRequest Request = new(Url);
+                string JsonData = Client.Get(Request).Content!;
+                T Response = JsonConvert.DeserializeObject<T>(JsonData)!;
                 Client.Dispose();
                 return Response;
             }
