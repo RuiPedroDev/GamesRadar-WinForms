@@ -31,7 +31,7 @@ namespace GameApi
         {
             string Queries = $"sortBy={comboBox1.SelectedItem!.ToString()!.Replace(" ", "%20")}&desc={(comboBox1.SelectedItem.ToString() == "Price" ? Convert.ToInt32(!radioButton1.Checked) : Convert.ToInt32(radioButton1.Checked))}&lowerPrice={MinPriceNumericUpDown.Value}&upperPrice={MaxPriceNumericUpDown.Value}&title={textBox1.Text.Replace("?", "").Replace("\\", "").Replace("&", "").Trim()}{(StoreFilter != "" ? $"&storeID={StoreFilter}" : "")}&pageNumber={PageNumber}";
             Debug.WriteLine(Url + Queries);
-            List<APIResponseModel.root> ResponseObj = GetRequest<List<APIResponseModel.root>>(Url + Queries);
+            List<APIResponseModel.root>? ResponseObj = GetRequest<List<APIResponseModel.root>>(Url + Queries);
             if (ResponseObj is not null)
             {
                 label5.Text = $"Page number: {PageNumber + 1}";
@@ -61,7 +61,7 @@ namespace GameApi
                 flowLayoutPanel1.Controls.Add(Game);
             }
         }
-        T GetRequest<T>(string Url)
+        T? GetRequest<T>(string Url)
         {
             try
             {
@@ -72,8 +72,9 @@ namespace GameApi
                 Client.Dispose();
                 return Response;
             }
-            catch (Exception) {
-                MessageBox.Show("Something went wrong", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error); return default(T);
+            catch (Exception)
+            {
+                MessageBox.Show("Something went wrong", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error); return default;
             }
         }
 
