@@ -4,7 +4,7 @@ namespace GameApi
 {
     public class APIResponseModel
     {
-        public class root
+        public class Root
         {
             public string? internalName { get; set; }
             public string? title { get; set; }
